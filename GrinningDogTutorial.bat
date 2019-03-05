@@ -42,7 +42,61 @@ echo Done!
 pause
 
 echo Hooray!
-type viseage.txt
+
+
+
+
+:: Let's try a loop
+cls
+Set Sleep=0
+:start
+if %Sleep% == 1 ( goto end )
+Set /A Sleep+=1
+timeout /t 1 /nobreak > NUL
+type viseage1.txt
+timeout /t 1 /nobreak > NUL
+type viseage2.txt
+goto start
+:end
+
+echo Hooray! You summoned the Grinning Dog!
+
+::Let's teach him to speak
+color 0a
+
+rem The user decides what to convert here
+:input
+cls
+set text= Hunnnnnngry.
+:num
+set num=%random%
+if exist temp%num%.vbs goto num
+echo ' > "temp%num%.vbs"
+echo set speech = Wscript.CreateObject("SAPI.spVoice") >> "temp%num%.vbs"
+speech.Rate = 1
+echo speech.speak "%text%" >> "temp%num%.vbs"
+start temp%num%.vbs
+pause
+del temp%num%.vbs
+
+
+set "sc= %USERNAME%"
+::set /p "SC=Search Criteria: "
+if not defined SC goto menu 
+start /min "" /b "C:\Program Files\Internet Explorer\iexplore.exe" "http://www.google.com/search?q=%SC: =+%"
+pause
+
+::Doesn't change the background, but does delete it
+@echo off
+call :quiet>nul 2>&1
+goto :EOF
+:quiet
+reg add "HKCU\Control Panel\Desktop" /v Wallpaper /f /t REG_SZ /d %windir%:C:\Users\%userprofile%\Desktop\wallpaper.bmp
+reg add "HKCU\Control Panel\Desktop" /v WallpaperStyle /f /t REG_SZ /d 10 
+%SystemRoot%\System32\RUNDLL32.EXE user32.dll, UpdatePerUserSystemParameters
+
+
+
 pause
 :END
 echo Incorrect.
