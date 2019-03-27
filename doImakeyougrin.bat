@@ -1,6 +1,13 @@
 rem the ascii generator is https://asciiart.club/
+rem Zetauri
 echo off
+for /f "delims=" %%x in (yourFiles\memory.txt) do set Save=%%x
+for /f "delims=" %%x in (yourFiles\hand.txt) do set Hand=%%x
+echo You rrem %Save%.
+GOTO %Save%
 echo.
+
+:START
 title Reality fades in from your sleepy blur
 echo You've been on the line for a while now.
 pause >nul
@@ -20,6 +27,7 @@ echo 1. Look out the window
 echo 2. Bide your time
 echo 3. echo Hello?
 echo.
+
 :PROMPT
 SET /P AREYOUSURE=Make your choice:
 SET CURRNAME=PROMPT
@@ -328,6 +336,34 @@ echo She could not care less
 echo But she could not ignore such things
 pause >nul
 
+:PANDORARIDDLE
+echo So let's play
+pause >nul
+
+:RIDDLE1
+echo In the heat of night
+echo Thousands of voices sing
+echo And black shells scutter
+
+:RIDDLE2
+echo The heavens cry
+echo And up I rise
+echo To fight the onslaught of the skies
+
+:RIDDLE3
+echo Call me up when you feel lucky
+echo A game, a strategy, a gamble
+echo Take me to fall or rise
+
+:RIDDLE4
+echo Something there but not quite solid
+echo Light on light or dust or screen
+echo Something built to be decieving, or another's gleam
+
+:RIDDLE5
+echo Fire burns in its belly, and spouts on four scales
+echo It breathes through coiled metal, inhale and exhale
+echo Feed it well, for it will does not wish to consume
 
 :PANDORAGIFT
 title The fluttering of paper comes from the stomach of the beast
@@ -365,6 +401,10 @@ echo He lounges his head towards where you stand
 echo His eyes are dull and glassy
 echo A ring of pale ice, surrounded by a ring of pink glass
 pause >nul
+msg * This can be how Ansel talks
+
+:BRANDISH
+echo you brandish a %Hand%
 
 :ANSELGIFT
 title You hear the clicking of bugs from someplace, and the singing of a hundred men

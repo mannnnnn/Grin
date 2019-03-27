@@ -1,0 +1,14 @@
+What can you hold in your hand?
+STICK
+KNIFE
+GUN
+SWORD
+BONE
+FIFE
+BALL
+CORD
+BONE
+GIFT
+AIR
+ROCK
+NOTHING
