@@ -290,17 +290,107 @@ echo 1.Pandora
 echo 2.The Wayward Sister
 echo 3.echo The One with Five Hearts
 echo.
-:QUESTIONS
-SET /P AREYOUSURE=Make your choice:
-SET CURRNAME=QUESTIONS
-IF /I "%AREYOUSURE%" EQU "help" GOTO HELPBASIC
-IF /I "%AREYOUSURE%" EQU "1" GOTO WHO
-IF /I "%AREYOUSURE%" EQU "2" GOTO FOOD
-IF /I "%AREYOUSURE%" EQU "3" GOTO TYPE
-IF /I "%AREYOUSURE%" NEQ "4" GOTO QUESTION
 
-rem PANDORA
-:PANDORA
+:PANPAN
+SET /P AREYOUSURE=Make your choice:
+SET CURRNAME=PANPAN
+IF /I "%AREYOUSURE%" EQU "help" GOTO HELPBASIC
+IF /I "%AREYOUSURE%" EQU "1" GOTO SHE
+IF /I "%AREYOUSURE%" EQU "2" GOTO SHE
+IF /I "%AREYOUSURE%" EQU "3" GOTO SHE
+IF /I "%AREYOUSURE%" NEQ "4" GOTO PANPAN
+
+:SHE
+title Your head collides with the bar as the train lurches. You feel metal on flesh, but sense nothing
+echo. 
+echo The subway screeches to a halt.
+echo The shriek of metal on track.
+echo Something tangible on something distant.
+pause >nul
+echo.
+echo The bulbs breathe their last light
+echo The cold glow of heat about the room vanishes
+echo A haze of emptiness cuts you down
+pause >nul
+echo.
+echo In the empty light of the car, you stand with the dog
+echo It is unchanged
+echo The tone rings and the doors of the subway slide open.
+pause >nul
+
+echo.
+echo.
+echo 1. Leave 
+echo 2. Stay
+echo 3. taskkill The Grinning Dog
+echo.
+
+:POWERFULMOVE
+SET /P AREYOUSURE=Make your choice:
+SET CURRNAME=POWERFULMOVE
+IF /I "%AREYOUSURE%" EQU "help" GOTO HELPBASIC
+IF /I "%AREYOUSURE%" EQU "1" GOTO PANDORAREALM
+IF /I "%AREYOUSURE%" EQU "2" GOTO STAY
+IF /I "%AREYOUSURE%" EQU "3" GOTO KILLATTEMPT
+IF /I "%AREYOUSURE%" NEQ "3" GOTO POWERFULMOVE
+
+:STAY
+echo.
+echo The dog sees your hesitation
+echo It stands up and trots over
+echo Its shaggy fur stinks of damp and rotted
+pause >nul
+echo.
+echo Husk
+echo Why do you pause?
+echo Are you more afraid of Pandora than I?
+echo Are you comfortable in the train?
+echo Neither will suffice.
+pause >nul
+echo.
+echo For the first time, you feel true pain here
+echo It splits your skin, shaving off layer and layer and layer
+echo He pulls the fingernails from your flesh
+echo He does not move
+pause >nul
+echo.
+echo Your feet become gnawed
+echo You see him eat, a phantom image
+echo He has feasted on your flesh before
+echo He has sunk his teeth to the bone of your leg
+echo He has shredded your flesh
+pause >nul
+GOTO DEATH
+
+:KILLATTEMPT
+echo.
+echo Your hands latch onto the dog's throat
+echo You crush its windpipe
+echo It continues to grin
+pause >nul
+echo.
+echo Husk
+echo Where is your fear?
+echo Do you think yourself powerful?
+echo You think because you have freewill, you are strong?
+echo You will learn to play the game.
+pause >nul
+echo.
+echo For the first time, you feel true pain here
+echo It splits your skin, shaving off layer and layer and layer
+echo He pulls the toenails from your flesh
+echo He does not move
+pause >nul
+echo.
+echo Your hands become gnawed
+echo You see him eat, a phantom image
+echo He has feasted on your flesh before
+echo He has sunk his teeth to the bone of your palm
+echo He has shredded your flesh
+pause >nul
+GOTO DEATH
+
+:PANDORAREALM
 title The air is chilly, like frost and dew settling on your skin
 echo.
 echo There's no station outside, but a great expanse of water
@@ -313,10 +403,47 @@ echo They flare like faraway fireworks, frenzied and unknowable
 echo Slivers of warm color spark against the cold of the world
 pause >nul
 echo.
-echo The water laps at the yellow metal mat of the car door
+echo Cold water laps at the yellow metal mat of the car door
 echo It waits by the edge.
 echo The dog watches you.
 
+echo.
+echo.
+echo 1. Step into Pandora's realm 
+echo 2. Plunge into the water
+echo 3. echo Hello?
+echo.
+
+:COLDREALM
+SET /P AREYOUSURE=Make your choice:
+SET CURRNAME=COLDREALM
+IF /I "%AREYOUSURE%" EQU "help" GOTO HELPBASIC
+IF /I "%AREYOUSURE%" EQU "1" GOTO STEPINTO
+IF /I "%AREYOUSURE%" EQU "2" GOTO PLUNGE
+IF /I "%AREYOUSURE%" EQU "3" GOTO CALLHER
+IF /I "%AREYOUSURE%" NEQ "3" GOTO COLDREALM
+
+:STEPINTO
+echo.
+echo The icewater stings your feet
+echo You can taste the cold in your teeth
+echo There is no car behind you.
+pause >nul
+GOTO PANDORA
+:PLUNGE
+echo.
+echo Your feet betray your madness
+echo The cold is a barrier that pushes you as you push forward
+echo There is no car behind you.
+pause >nul
+GOTO PANDORA
+:CALLHER
+echo.
+echo You cry out to the cold sea
+echo It pulls you closer into its embrace.
+echo There is no car behind you.
+pause >nul
+GOTO PANDORA
 
 :PANDORA
 title The water sprays onto your skin, leaving burns behind, and small pools of metal
@@ -335,6 +462,24 @@ echo She hears your approach
 echo She could not care less
 echo But she could not ignore such things
 pause >nul
+
+echo.
+echo.
+echo 1. Beg for the Dog's Meal
+echo 2. Hide Among the Ice Water
+echo 3. killtask Pandora 
+echo.
+
+:SHEISHERE
+SET /P AREYOUSURE=Make your choice:
+SET CURRNAME=SHEISHERE
+IF /I "%AREYOUSURE%" EQU "help" GOTO HELPBASIC
+IF /I "%AREYOUSURE%" EQU "1" GOTO STEPINTO
+IF /I "%AREYOUSURE%" EQU "2" GOTO PLUNGE
+IF /I "%AREYOUSURE%" EQU "3" GOTO CALLHER
+IF /I "%AREYOUSURE%" NEQ "3" GOTO SHEISHERE
+
+
 
 :PANDORARIDDLE
 echo So let's play
@@ -493,6 +638,12 @@ GOTO NOTCURIOUS
 :END
 :THEEND
 echo.
+echo You breathe
 color 4f
+pause >nul
+echo You breathe
+pause >nul
+echo You breathe
+pause >nul
 echo And that's the end.
 pause >nul
