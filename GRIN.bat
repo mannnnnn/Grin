@@ -579,6 +579,7 @@ echo The skitter and latch themselves onto your feet
 pause >nul
 
 :GREYWALL
+GREYWALL > yourFiles\memory.txt
 title For the first time, you feel calm
 echo.
 echo A man stands in front of the gate.
@@ -595,6 +596,130 @@ echo He blocks the way past the gate
 echo But he watches the other side as well
 echo His black gloves rest on a cane
 pause >nul
+echo.
+echo.
+echo 1. Who are you?
+echo 2. Cower.
+echo 3. killtask Greywall 
+echo.
+
+:REDEEM
+SET /P AREYOUSURE=Make your choice:
+SET CURRNAME=REDEEM
+IF /I "%AREYOUSURE%" EQU "help" GOTO HELPBASIC
+IF /I "%AREYOUSURE%" EQU "1" GOTO WHOISGREYWALL
+IF /I "%AREYOUSURE%" EQU "2" GOTO COWARD
+IF /I "%AREYOUSURE%" EQU "3" GOTO KILLGREY
+IF /I "%AREYOUSURE%" NEQ "3" GOTO REDEEM
+
+:WHOISGREYWALL
+echo.
+echo He is the Gatekeeper
+echo He stands between the spirit realm and the mortal realm
+echo You know him and he knows you.
+pause >nul
+echo.
+echo He hunts those between.
+echo In a haze of blackened cloth and mist he hunts
+echo But how can he catch one such as yourself
+pause >nul
+GOTO GREY1
+:COWARD
+echo.
+echo His presence brings you to your knees
+echo He stands between the spirit realm and the mortal realm
+echo He has condemned you, because he cannot kill you
+pause >nul
+echo.
+echo You feel hate and fear rise within your chest
+echo His failure resulted in your subservience
+echo The hus tied to the player and the dog
+pause >nul
+GOTO GREY1
+:KILLGREY
+echo.
+echo You lunge foward with %hand% in your hand
+echo The stink of his failure clings to you
+echo He has damned you to this husk, and to this player and dog
+pause >nul
+echo.
+echo For the first time you complete your task
+echo You use the %hand% against him.
+echo He appears unaffected, but dies out of pity for you.
+pause >nul
+exit
+GOTO GREY1
+
+:GREY1
+GREY1 > yourFiles\memory.txt
+title He did this
+echo.
+echo Husk.
+echo Why do you return to wander?
+echo Didn't you want rest?
+pause >nul
+echo.
+echo You are beyond what I can reach.
+echo I am no god, no demon, no spirit
+echo Would I have flesh and blood, I would be mortal
+pause >nul
+echo.
+echo Hence I cannot save you.
+echo Nor will I watch you continue your restless panting.
+echo The dog and I will continue in opposition.
+pause >nul
+echo.
+echo.
+echo 1. Beg for the dog's meal.
+echo 2. You do not frighten me.
+echo 3. echo Free me 
+echo.
+
+:STAND
+SET /P AREYOUSURE=Make your choice:
+SET CURRNAME=STAND
+IF /I "%AREYOUSURE%" EQU "help" GOTO HELPBASIC
+IF /I "%AREYOUSURE%" EQU "1" GOTO BEGNOT
+IF /I "%AREYOUSURE%" EQU "2" GOTO COWARD
+IF /I "%AREYOUSURE%" EQU "3" GOTO FREEME
+IF /I "%AREYOUSURE%" NEQ "3" GOTO STAND
+
+:BEGNOT
+echo.
+echo You drop to your knees.
+echo But he will not have you bow.
+echo His face holds stern.
+pause >nul
+echo.
+echo You will die because of me.
+echo For I will not hand over my people for your dog's consumption.
+echo Just because I have failed you does not mean I will condemn the others.
+pause >nul
+GOTO GREYWALLMISDIRECT
+:COWARD
+echo.
+echo His face drops into a scowl.
+echo Your stomach drops.
+echo A thousand shreiking voices sound from the distance.
+pause >nul
+echo.
+echo You dare to call me a coward?
+echo Do you not know what I've endured in front of this gate?
+echo Do you know how many you'll kill today?
+pause >nul
+GOTO GREYWALLMISDIRECT
+:FREEME
+echo.
+echo Husk.
+echo You plead for death.
+echo I cannot assure such a thing.
+pause >nul
+echo.
+echo So long as you lose, the game continues.
+echo But I can at least try.
+echo Godspeed, may you never play puppet again.
+pause >nul
+exit
 
 :GREYWALLMISDIRECT
 title You feel however you are feeling
@@ -611,7 +736,7 @@ pause >nul
 echo.
 echo So is this where it will end?
 echo Will you walk back to the subway car?
-echo Are you going to crawl to your death because the prompt says so?
+echo Are you going to crawl to your death because the player says so?
 pause >nul
 
 
