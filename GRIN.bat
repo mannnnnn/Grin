@@ -43,6 +43,7 @@ echo Nothing visible except the constant dots of light patterning past.
 pause >nul
 
 :NOTCURIOUS
+NOTCURIOUS > yourFiles\memory.txt
 title The air is musty, and it makes your lungs hurt. Panic is starting.
 echo.
 echo Your body feels weak, and your mind is just only fluttering back
@@ -82,6 +83,7 @@ echo You remain staring with heavy eyes.
 pause >nul
 
 :HEGRINS
+HEGRINS > yourFiles\memory.txt
 title You can feel static in the air, and the absence of life from the room
 echo.
 echo The dog takes notice, and it lifts its head from the dusty floor.
@@ -115,6 +117,7 @@ IF /I "%AREYOUSURE%" EQU "2" GOTO GRINNINGDOG
 IF /I "%AREYOUSURE%" NEQ "3" GOTO RUN
 EXIT
 :GRINNINGDOG
+GRINNINGDOG > yourFiles\memory.txt
 title The room is too dim, your eyes are getting unfocused.
 echo.
 echo The dog's grin remains.
@@ -169,6 +172,7 @@ echo Your mind clears, but the dog and the car remain
 pause >nul
 GOTO SILLY
 :SILLY
+SILLY > yourFiles\memory.txt
 title Your heart strains against its chords, the eyes are unnerving. The car is cold.
 echo.
 echo The people are few
@@ -214,6 +218,7 @@ echo Your magic has made it so.
 pause >nul
 GOTO CONFUSION
 :CONFUSION
+CONFUSION > yourFiles\memory.txt
 title The lightbulbs on the top of the car have palpable heat in the cold.
 echo.
 echo This is how it will work.
@@ -230,7 +235,6 @@ echo This is how it will work.
 echo You can leave whenever you wish.
 echo Choose your timing wisely.
 pause >nul
-rem add first save
 echo.
 echo.
 echo 1. Who are you?
@@ -267,6 +271,8 @@ type dogInfo.txt
 pause >nul
 GOTO ETC
 :ETC
+
+ETC > yourFiles\memory.txt
 title The dog is in front of you, but you feel it everywhere
 echo.
 echo Husk.
@@ -301,6 +307,7 @@ IF /I "%AREYOUSURE%" EQU "3" GOTO SHE
 IF /I "%AREYOUSURE%" NEQ "4" GOTO PANPAN
 
 :SHE
+SHE > yourFiles\memory.txt
 title Your head collides with the bar as the train lurches. You feel metal on flesh, but sense nothing
 echo. 
 echo The subway screeches to a halt.
@@ -391,6 +398,7 @@ pause >nul
 GOTO DEATH
 
 :PANDORAREALM
+PANDORAREALM > yourFiles\memory.txt
 title The air is chilly, like frost and dew settling on your skin
 echo.
 echo There's no station outside, but a great expanse of water
@@ -446,6 +454,7 @@ pause >nul
 GOTO PANDORA
 
 :PANDORA
+PANDORA > yourFiles\memory.txt
 title The water sprays onto your skin, leaving burns behind, and small pools of metal
 echo.
 echo Pandora's coils bind around the sea
