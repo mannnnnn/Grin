@@ -499,25 +499,102 @@ echo In the heat of night
 echo Thousands of voices sing
 echo And black shells scutter
 
+:ANSWERME1
+SET /P AREYOUSURE=What am I?: 
+SET CURRNAME=ANSWERME1
+IF /I "%AREYOUSURE%" EQU "help" GOTO HELPRIDDLE
+IF /I "%AREYOUSURE%" EQU "cricket" GOTO ANSWER1
+IF /I "%AREYOUSURE%" EQU "crickets" GOTO ANSWER1
+IF /I "%AREYOUSURE%" EQU "a cricket" GOTO ANSWER1
+IF /I "%AREYOUSURE%" NEQ "cricket" GOTO ANSWERME1
+
+:ANSWER1
+echo.
+echo Correct.
+echo.
+
 :RIDDLE2
 echo The heavens cry
 echo And up I rise
 echo To fight the onslaught of the skies
 
+:ANSWERME2
+SET /P AREYOUSURE=What am I?: 
+SET CURRNAME=ANSWERME2
+IF /I "%AREYOUSURE%" EQU "help" GOTO HELPRIDDLE
+IF /I "%AREYOUSURE%" EQU "umbrella" GOTO ANSWER2
+IF /I "%AREYOUSURE%" EQU "umbrellas" GOTO ANSWER2
+IF /I "%AREYOUSURE%" EQU "an umbrella" GOTO ANSWER2
+IF /I "%AREYOUSURE%" NEQ "umbrella" GOTO ANSWERME2
+
+:ANSWER2
+echo.
+echo Correct.
+echo.
+
 :RIDDLE3
 echo Call me up when you feel lucky
 echo A game, a strategy, a gamble
-echo Take me to fall or rise
+echo Take on me to fall or rise
+
+:ANSWERME3
+SET /P AREYOUSURE=What am I?: 
+SET CURRNAME=ANSWERME3
+IF /I "%AREYOUSURE%" EQU "help" GOTO HELPRIDDLE
+IF /I "%AREYOUSURE%" EQU "risk" GOTO ANSWER3
+IF /I "%AREYOUSURE%" EQU "risks" GOTO ANSWER3
+IF /I "%AREYOUSURE%" EQU "a risk" GOTO ANSWER3
+IF /I "%AREYOUSURE%" EQU "a-ha" GOTO TAKEONME
+IF /I "%AREYOUSURE%" NEQ "risk" GOTO ANSWERME3
+
+:TAKEONME
+echo.
+echo Pandora is not amused.
+echo The dog appears.
+GOTO DEATH
+
+:ANSWER3
+echo.
+echo Correct.
+echo.
 
 :RIDDLE4
 echo Something there but not quite solid
 echo Light on light or dust or screen
 echo Something built to be decieving, or another's gleam
 
+:ANSWERME4
+SET /P AREYOUSURE=What am I?: 
+SET CURRNAME=ANSWERME4
+IF /I "%AREYOUSURE%" EQU "help" GOTO HELPRIDDLE
+IF /I "%AREYOUSURE%" EQU "illusion" GOTO ANSWER4
+IF /I "%AREYOUSURE%" EQU "illusions" GOTO ANSWER4
+IF /I "%AREYOUSURE%" EQU "an illusion" GOTO ANSWER4
+IF /I "%AREYOUSURE%" NEQ "illusion" GOTO ANSWERME4
+
+:ANSWER4
+echo.
+echo Correct.
+echo.
+
 :RIDDLE5
 echo Fire burns in its belly, and spouts on four scales
 echo It breathes through coiled metal, inhale and exhale
-echo Feed it well, for it will does not wish to consume
+echo Feed it well, for it will does not intend to consume
+
+:ANSWERME5
+SET /P AREYOUSURE=What am I?: 
+SET CURRNAME=ANSWERME5
+IF /I "%AREYOUSURE%" EQU "help" GOTO HELPRIDDLE
+IF /I "%AREYOUSURE%" EQU "oven" GOTO ANSWER5
+IF /I "%AREYOUSURE%" EQU "an oven" GOTO ANSWER5
+IF /I "%AREYOUSURE%" EQU "ovens" GOTO ANSWER5
+IF /I "%AREYOUSURE%" NEQ "oven" GOTO ANSWERME5
+
+:ANSWER5
+echo.
+echo Correct.
+echo.
 
 :PANDORAGIFT
 title The fluttering of paper comes from the stomach of the beast
@@ -759,6 +836,12 @@ echo.
 title Time pauses as you look over the commands at your disposal
 echo There is no help for you here.
 rem echo "GOTO %%input%% >>> The story jumps to a new area or time, specified by %%input%%"
+GOTO %CURRNAME%
+
+:HELPRIDDLE
+echo.
+title Time pauses as you look over the commands at your disposal
+echo Think harder.
 GOTO %CURRNAME%
 
 :MUZZLED
