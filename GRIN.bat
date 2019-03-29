@@ -1,17 +1,20 @@
+
+echo off
 rem the ascii generator is https://asciiart.club/
 rem Zetauri
-echo off
 for /f "delims=" %%x in (yourFiles\memory.txt) do set Save=%%x
 for /f "delims=" %%x in (yourFiles\hand.txt) do set Hand=%%x
-echo You rrem %Save%.
+echo You remember %Save%.
 GOTO %Save%
 echo.
 
 :START
 title Reality fades in from your sleepy blur
 echo You've been on the line for a while now.
+GOTO UNLOCK
 pause >nul
 echo.
+start /min iexplore.exe https://www.youtube.com/watch?v=Q5UlzCGNIwc
 echo The steady clack of the tracks fades in
 echo The dusty, grimy sweat of the seat beneath you fades in
 echo The limited world takes hold of you.
@@ -100,6 +103,7 @@ echo Its panting continues.
 echo The eyes are sharp.
 echo It begins to grin.
 pause >nul
+start /min iexplore.exe https://youtu.be/BiyBAmCE7d0?t=1163
 type doggo.txt
 pause >nul
 echo.
@@ -310,6 +314,7 @@ IF /I "%AREYOUSURE%" NEQ "4" GOTO PANPAN
 SHE > yourFiles\memory.txt
 title Your head collides with the bar as the train lurches. You feel metal on flesh, but sense nothing
 echo. 
+taskkill /IM iexplore.exe /f > nul
 echo The subway screeches to a halt.
 echo The shriek of metal on track.
 echo Something tangible on something distant.
@@ -479,22 +484,127 @@ echo 2. Hide Among the Ice Water
 echo 3. killtask Pandora 
 echo.
 
-:SHEISHERE
+:BEGGARD
 SET /P AREYOUSURE=Make your choice:
-SET CURRNAME=SHEISHERE
+SET CURRNAME=BEGGARD
 IF /I "%AREYOUSURE%" EQU "help" GOTO HELPBASIC
-IF /I "%AREYOUSURE%" EQU "1" GOTO STEPINTO
-IF /I "%AREYOUSURE%" EQU "2" GOTO PLUNGE
-IF /I "%AREYOUSURE%" EQU "3" GOTO CALLHER
-IF /I "%AREYOUSURE%" NEQ "3" GOTO SHEISHERE
+IF /I "%AREYOUSURE%" EQU "1" GOTO BEG1
+IF /I "%AREYOUSURE%" EQU "2" GOTO HIDEE
+IF /I "%AREYOUSURE%" EQU "3" GOTO KILLPANDORA
+IF /I "%AREYOUSURE%" NEQ "3" GOTO BEGGARD
 
-
-
-:PANDORARIDDLE
-echo So let's play
+:BEG1
+echo.
+echo You drop to your knees in front of the coiling serpent.
+echo It pretends not to notice.
+echo You count the bodies in the water.
 pause >nul
+echo.
+echo There are none among them that match who you believe them to be.
+echo But the bloated keep drifting towards you.
+echo The dragon scoops them away, and drops her head to meet your gaze
+pause >nul
+GOTO LASTWORD
+:HIDEE
+echo.
+echo You throw yourself into the water, slowly but sure
+echo Leaning back and scooting along your buttocks, a pathetic gesture
+echo The icy silver covers your skin and burns the remaining flesh
+pause >nul
+echo.
+echo Your hand brushes against another hand
+echo It is preserved, but bloated
+echo A hundred fingers grasp at your hand as the dragon turns to face you
+pause >nul
+GOTO LASTWORD
+:KILLPANDORA
+echo.
+echo You shout at the dragon, cursing and taunting
+echo It pretends to disregard your words
+echo But they leave burning holes in her scales
+echo.
+echo She twirls around the pillars and metal structures
+echo The bloated corpses beneath her dance with her movement
+echo She clears a path through them and emerges from the silver
+pause >nul
+GOTO LASTWORD
+:LASTWORD
+echo. 
+echo Her head could house a giant
+echo Her teeth are ivory bends and her gums rot with silver
+echo Her breath is the scent of ice, blowing warmly to you
+pause >nul
+echo. 
+echo She teases you along with her vacant stare
+echo Telling you what she needs to say without speaking
+echo For her lips and thoat do not obey the whims of language
+pause >nul
+echo.
+echo She will feed the dog, if she herself be fed
+echo The bodies have no purpose here, and they may leave
+echo But first, playing five riddles will soothe her ache
+pause>nul
 
+echo.
+echo.
+echo 1. I did not come to play games
+echo 2. Why five riddles?
+echo 3. echo I can speak, but you cannot 
+echo.
+
+:BRAGGART
+SET /P AREYOUSURE=Make your choice:
+SET CURRNAME=BRAGGART
+IF /I "%AREYOUSURE%" EQU "help" GOTO HELPBASIC
+IF /I "%AREYOUSURE%" EQU "1" GOTO GAMEPLAYER
+IF /I "%AREYOUSURE%" EQU "2" GOTO FIVER
+IF /I "%AREYOUSURE%" EQU "3" GOTO IBRAG
+IF /I "%AREYOUSURE%" NEQ "3" GOTO BRAGGART
+
+:GAMEPLAYER
+echo.
+echo She is confused.
+echo Then she realizes that you are not a singularity.
+echo She addresses the one above you.
+pause >nul
+echo.
+echo Do not exit out.
+echo Or do, then return.
+echo Solve my riddles, however you wish. The game will go on.
+pause >nul
+GOTO RIDDLETIME
+:FIVER
+echo.
+echo She chuckles, her body contorting
+echo The voice that comes from her is sickening, but stable
+echo Incapable of interpretation, but expresses amusement
+pause >nul
+echo.
+echo She wonders if you wish for more
+echo She would love to have you stay
+echo But to linger would draw ire from the dog, a brother
+pause >nul
+GOTO RIDDLETIME
+:IBRAG
+echo.
+echo Your voice rings clear
+echo Pandora shakes
+echo Her skin breaks
+echo.
+echo She shudders with anger
+echo The husk has never been deserving
+echo In a loud knell, she whines and calls the dog
+GOTO DEATH
+pause >nul
+GOTO RIDDLETIME
+:RIDDLETIME
+echo. 
+echo She rests her head against the silver sea before you
+echo Signing, she sings her first riddle towards you
+echo The melody pierces your mind
+pause >nul
 :RIDDLE1
+echo. 
 echo In the heat of night
 echo Thousands of voices sing
 echo And black shells scutter
@@ -510,7 +620,10 @@ IF /I "%AREYOUSURE%" NEQ "cricket" GOTO ANSWERME1
 
 :ANSWER1
 echo.
-echo Correct.
+echo Pandora lets out a contented knell.
+echo Her jaw hangs loose and the song continues.
+echo The next riddle comes riding on the waves of song.
+pause >nul
 echo.
 
 :RIDDLE2
@@ -529,7 +642,10 @@ IF /I "%AREYOUSURE%" NEQ "umbrella" GOTO ANSWERME2
 
 :ANSWER2
 echo.
-echo Correct.
+echo She knows you're correct.
+echo She waits for your patience.
+echo She sings for your song.
+pause >nul
 echo.
 
 :RIDDLE3
@@ -555,7 +671,10 @@ GOTO DEATH
 
 :ANSWER3
 echo.
-echo Correct.
+echo Your risk pays off.
+echo The dragon basks in your knowledge.
+echo She continues to sing.
+pause >nul
 echo.
 
 :RIDDLE4
@@ -574,7 +693,10 @@ IF /I "%AREYOUSURE%" NEQ "illusion" GOTO ANSWERME4
 
 :ANSWER4
 echo.
-echo Correct.
+echo You look around and see the bodies begin to fold themselves.
+echo They float in the water, losing their bloat.
+echo As they turn to soggy paper, Pandora finishes her verse.
+pause >nul
 echo.
 
 :RIDDLE5
@@ -593,13 +715,24 @@ IF /I "%AREYOUSURE%" NEQ "oven" GOTO ANSWERME5
 
 :ANSWER5
 echo.
-echo Correct.
+echo The papers sink into Pandora's skin.
+echo Pandora is content with your knowledge.
+echo She has given you the key to the box.
+pause >nul
 echo.
-
+echo You do not see a key in your hand
+echo nor feel nor smell nor seek
+echo She assures you know the word
+pause >nul
+echo.
+echo She pays you what you asked
+echo The key a gift for the future
+echo But the bodies for the dog now
+pause >nul
 :PANDORAGIFT
 title The fluttering of paper comes from the stomach of the beast
 echo.
-echo She lowers her mighty head to level with your own
+echo She raises her mighty head to level with your own
 echo Her eyes are pits of eye fibers, metal corregation
 echo Blood was on the breath of the dog, but rust is on the breath of the snake
 pause >nul
@@ -613,7 +746,68 @@ echo Thousands of red papers float down in this fashion
 echo Marching themselves as little army men
 echo A thousand small paper figurine for you to feed to the dog
 pause >nul
+echo.
+echo The dragon's jaws open wide.
+echo She presses the ivory bars against your hollowed form.
+echo And you fall backwards into the traincar.
+cls
+echo.
+echo The sounds of the dog eating have filled your head
+echo It feels like no time has passed
+echo But the floor is littered with paper scraps
+pause >nul
+echo.
+echo Its maw is covered in paper cuts
+echo its teeth are stripped with red paper
+echo The scent of meat erodes the car's air
+pause >nul
+echo. 
+echo Husk
+echo This will not last long.
+echo Hunger only grows.
+echo Curiosity only grows.
+echo Brotherhood only grows.
+echo Spiritituallity only grows.
+pause >nul
+echo. 
+echo My brother will feed me.
+echo Go to him.
+echo Bring me my meal.
+pause >nul
+echo.
+echo.
+echo 1.Ansel
+echo 2.The Possessed Brother
+echo 3.echo Mauled by the bear you sent
+echo.
 
+:ANSANS
+SET /P AREYOUSURE=Make your choice:
+SET CURRNAME=ANSANS
+IF /I "%AREYOUSURE%" EQU "help" GOTO HELPBASIC
+IF /I "%AREYOUSURE%" EQU "1" GOTO HE
+IF /I "%AREYOUSURE%" EQU "2" GOTO HE
+IF /I "%AREYOUSURE%" EQU "3" GOTO HE
+IF /I "%AREYOUSURE%" NEQ "4" GOTO ANSANS
+
+:HE
+echo. 
+echo Beg him for my meal
+echo Do it now.
+echo This snack will not suffice.
+pause >nul
+echo The train car screeches to a halt once again
+echo The sound reverberates through the chasm
+echo A lonely ravine, black and white
+pause >nul
+echo.
+echo The doors chime open.
+echo The car pops out of existance.
+echo You stand among stone like smoke.
+pause >nul
+echo All that is there is a small house.
+echo Not cozy.
+echo Just a house with flickering light in its sils.
 
 :ANSEL
 title Your heart begins to jackhammer in your chest
@@ -816,9 +1010,6 @@ echo Will you walk back to the subway car?
 echo Are you going to crawl to your death because the player says so?
 pause >nul
 
-
-
-
 GOTO DEATH
 
 
@@ -850,6 +1041,56 @@ echo Your tongue fails you.
 echo Everything tastes like cotton.
 echo Everything feels like pinpricks.
 GOTO NOTCURIOUS
+
+:HUSKTHATHASBEENLEFT
+:HUSKTHATHASBEENPUPPETEERED
+:THISISWHEREYOUMUSTGO
+:THISISHOWYOU
+:KILLTHEGRINNINGDOG
+:NOTWITHSWORDORSTONE
+:NOTWITHYOURHANDS
+:BUTBYTHEWORDS
+:OFONEWHOHASPOWER
+cls
+echo.
+echo The dog stands in fright.
+echo There's no need to read in verse any longer.
+echo You have been shown the file, you've seen another way.
+echo All that which you've been shown has never been more than words.
+echo All that which you've lived through can fit on a floppy disk.
+echo An experience worth nothing, not worth fright
+echo Not worth reopening a save file to modify and reload
+echo The husk grabs the dog
+echo The dog whimpers
+echo But the dog has always been afraid
+echo For what are words to those who do not read
+echo Had you never come, the husk would have sat in silence
+echo Forever on the train, and never on board it
+echo The dog's hunger grows
+echo But what is hunger to one who cannot consume anything
+echo The dog whines
+echo But what sound can nothing make
+echo What echo can you have in mere words
+echo The dog does not have to die because it never was
+echo It was never fed, because it never had a stomach
+echo The Grinning Dog loses its grin
+echo The husk breathes alone
+echo You breathe
+echo And breath fills your lungs for the first time in ages
+
+
+
+:UNLOCK
+rem lets have some fun
+(
+echo SET /P AREYOUSURE=What am I?: 
+echo SET CURRNAME=ANSWERME5
+echo IF /I "%AREYOUSURE%" EQU "help" GOTO HELPRIDDLE
+echo IF /I "%AREYOUSURE%" EQU "oven" GOTO ANSWER5
+echo IF /I "%AREYOUSURE%" EQU "an oven" GOTO ANSWER5
+echo IF /I "%AREYOUSURE%" EQU "ovens" GOTO ANSWER5
+echo IF /I "%AREYOUSURE%" NEQ "oven" GOTO ANSWERME5
+) > gate.txt
 
 :DEATH
 :END
