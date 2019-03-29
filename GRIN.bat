@@ -808,7 +808,58 @@ pause >nul
 echo All that is there is a small house.
 echo Not cozy.
 echo Just a house with flickering light in its sils.
+echo.
+echo.
+echo 1.Ring the doorbell
+echo 2.Go inside
+echo 3.echo Hello?
+echo.
 
+:HOUSE
+SET /P AREYOUSURE=Make your choice:
+SET CURRNAME=HOUSE
+IF /I "%AREYOUSURE%" EQU "help" GOTO HELPBASIC
+IF /I "%AREYOUSURE%" EQU "1" GOTO HE
+IF /I "%AREYOUSURE%" EQU "2" GOTO HE
+IF /I "%AREYOUSURE%" EQU "3" GOTO HE
+IF /I "%AREYOUSURE%" NEQ "4" GOTO HOUSE
+
+:DOORBELL
+echo.
+echo The porch is ancient, its wood greyed
+echo No color exists besides the dull yellow of a bug zapper
+echo It hangs above you, empty
+pause > nul
+echo. 
+echo The doorbell gets pressed in, but makes no noise
+echo You find the door ajar, cracked white paint beckoning you in
+echo In the right room a TV plays, and you step in
+pause > nul
+GOTO ANSEL
+:INTRUDER
+echo.
+echo You shove your hands against the aging building
+echo The door caves in, blistering into dust
+echo You fall within the walls, they smother you
+pause > nul
+echo. 
+echo The splintering wood covers your skin like waves
+echo And you are spat out into the house's interior
+echo A TV flickers with static in the room.
+pause > nul
+GOTO ANSEL
+:CALLFORANSEL
+echo.
+echo You cry out for Ansel to come
+echo The eyes around the ravine wake
+echo A thousand vacant stares hold you captive
+pause > nul
+echo. 
+echo You stand there for too long.
+echo When you blink, you are inside the house.
+echo The image of the eyes burned into your retinas.
+pause > nul
+GOTO ANSEL
 :ANSEL
 title Your heart begins to jackhammer in your chest
 echo.
@@ -827,16 +878,151 @@ echo His eyes are dull and glassy
 echo A ring of pale ice, surrounded by a ring of pink glass
 pause >nul
 msg * Husk.
-msg * Husk?
+msg * /W Husk?
+msg * How foolish of you to come here.
+msg * /W Why would you come here?
+msg * Your ilk will feul me.
+msg * /W You must aid us in this duel.
 
-:BRANDISH
-echo you brandish a %Hand%
+echo.
+echo.
+echo 1.Duel?
+echo 2.I will help.
+echo 3.killtask Ansel
+echo.
+
+:HEREWEGOAGAIN
+SET /P AREYOUSURE=Make your choice:
+SET CURRNAME=HEREWEGOAGAIN
+IF /I "%AREYOUSURE%" EQU "help" GOTO HELPBASIC
+IF /I "%AREYOUSURE%" EQU "1" GOTO DUELRULE
+IF /I "%AREYOUSURE%" EQU "2" GOTO DUELSTART
+IF /I "%AREYOUSURE%" EQU "3" GOTO KILLANSEL
+IF /I "%AREYOUSURE%" NEQ "4" GOTO HEREWEGOAGAIN
+
+:DUELRULE
+msg * We are like you, a husk.
+msg * /W We may share room with them, but they are nothing like us.
+msg * We cannot share this body any longer.
+msg * /W They tried to murder his brother, they tried to steal Ansel's body
+msg * We have unfinished business.
+msg * /W We had to possess him as well, lest the others use it for evil
+msg * They dally, delaying our work.
+msg * /W We had no choice. Better Ansel be idle than a murderer.
+GOTO DUELSTART
+:KILLANSEL
+msg * You would dare kill me?
+msg * /W We know your choices, they won't hold back.
+msg * You deal with powers you cannot know.
+msg * /W We're tired, but so are they. Pay them no mind.
+GOTODUELSTART
+:DUELSTART
+msg * Bring me something with which to kill the other side.
+msg * /W Help us stop them. Give us some edge.
+msg * Duality has no place here.
+msg * /W Duality should have no place here.
+
+:TAKESHAPE
+echo You feel something take shape in your palm.
+
+:HANDGUESS
+SET /P AREYOUSURE=What will you hold in your hand?
+SET CURRNAME=HANDGUESS
+for /f "delims=" %%x in (yourFiles\hand.txt) do set Hand=%%x
+echo you brandish the %Hand%
+IF /I "%Hand%" EQU "STICK" GOTO STICK
+IF /I "%Hand%" EQU "ROCK" GOTO ROCK
+IF /I "%Hand%" EQU "AIR" GOTO AIR
+IF /I "%Hand%" EQU "LANTERN" GOTO LANTERN
+IF /I "%Hand%" EQU "ELECTRICITY" GOTO ELECTRICITY
+IF /I "%Hand%" EQU "LEATHER" GOTO LEATHER
+IF /I "%Hand%" EQU "DRILL" GOTO DRILL
+IF /I "%Hand%" EQU "GUN" GOTO GUN
+IF /I "%Hand%" EQU "RAWMEAT" GOTO RAWMEAT
+IF /I "%Hand%" EQU "LOAFOFBREAD" GOTO LOAFOFBREAD
+IF /I "%Hand%" EQU "VEIL" GOTO VEIL
+IF /I "%Hand%" EQU "OFFERING" GOTO OFFERING
+IF /I "%Hand%" EQU "INCENSE" GOTO INCENSE
+IF /I "%Hand%" EQU "SILVER DOLLAR" GOTO SILVERDOLLAR
+GOTO TAKESHAPE
+
+:ROCK
+msg *  Heavy, but crude
+msg * /W We have no need for something picked from the ground
+GOTO HANDGUESS
+
+:AIR
+msg *  Present us with nothing, recieve nothing
+msg * /W We cannot win by will alone
+GOTO HANDGUESS
+
+:LANTERN
+msg *  We do not enjoy the light
+msg * /W We cannot see in color
+GOTO HANDGUESS
+
+:ELECTRICITY
+msg *  We have no hunger like your dog
+msg * /W We have nothing to power, no need
+GOTO HANDGUESS
+
+:LEATHER
+msg *  We have had our fill of death
+msg * /W We need no skin
+GOTO HANDGUESS
+
+:DRILL
+msg *  Close, but a crude tool will not suffice
+msg * /W The metal burns, take it away
+GOTO HANDGUESS
+
+:GUN
+msg *  Poor Choice.
+msg * /W We won't save you from this.
+GOTO DEATH
+
+:RAWMEAT
+msg *  Flesh is for your dog, not for us
+msg * /W We do not need flesh any longer
+GOTO HANDGUESS
+
+:LOAFOFBREAD
+msg *  We are not hungry.
+msg * /W Why would we want to keep this body alive?
+GOTO HANDGUESS
+
+:VEIL
+msg *  We will not hide any longer.
+msg * /W No funeral shroud will ensure his death.
+GOTO HANDGUESS
+
+:OFFERING
+msg *  What could we desire besides our freedom?
+msg * /W What could we desire except his brother's life?
+GOTO HANDGUESS
+
+:INCENSE
+msg *  We cannot smell.
+msg * /W We enjoy the scent, but it means little.
+GOTO HANDGUESS
+
+:STICK
+msg *  A twig will not give us rest.
+msg * /W A branch has been extended and rejected.
+GOTO HANDGUESS
+
+:SILVERDOLLAR
+echo.
+echo He turns the coin over in his hands.
+echo The silver burns his fingers.
+msg *  That ought to shut them up.
+pause > nul
 
 :ANSELGIFT
 title You hear the clicking of bugs from someplace, and the singing of a hundred men
 echo.
-echo Ansel quiets his fervor for a second
-echo He looks afraid
+echo Ansel looks still
+echo Then he looks afraid
 echo With a pained yell, he plunges both hands into his chest
 pause >nul
 echo.
