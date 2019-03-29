@@ -826,7 +826,8 @@ echo He lounges his head towards where you stand
 echo His eyes are dull and glassy
 echo A ring of pale ice, surrounded by a ring of pink glass
 pause >nul
-msg * This can be how Ansel talks
+msg * Husk.
+msg * Husk?
 
 :BRANDISH
 echo you brandish a %Hand%
