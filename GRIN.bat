@@ -133,11 +133,13 @@ echo The remains of your hands begin to shake.
 echo Flesh reknits over rotted bones.
 echo It speaks.
 pause >nul
+COLOR 04
 echo.
 echo I'm hungry.
 echo You know the drill.
 pause >nul
 echo.
+COLOR 0f
 echo.
 echo 1. That wasn't three lines
 echo 2. I know the drill
@@ -155,6 +157,7 @@ IF /I "%AREYOUSURE%" NEQ "4" GOTO HESHUNGRY
 
 :SPEAKINTHREES
 echo.
+COLOR 04
 echo Do you think I'm bound by diction?
 echo I speak what I please.
 echo You hear what you want.
@@ -185,6 +188,7 @@ echo Your word is long
 echo You will bring food
 pause >nul
 echo.
+COLOR 0f
 echo.
 echo 1. I don't understand
 echo 2. Why is the traincar cold
@@ -202,6 +206,7 @@ IF /I "%AREYOUSURE%" NEQ "4" GOTO CONFUSION
 
 :UNDERSTAND
 echo.
+COLOR 04
 echo What have you to understand?
 echo You are given three choices on your console.
 echo You will take one of them or leave.
@@ -216,6 +221,7 @@ pause >nul
 GOTO CONFUSION
 :VOICE
 echo.
+COLOR 04
 echo I can hear you when you use that.
 echo Your voice is impersonal.
 echo Your magic has made it so.
@@ -225,6 +231,7 @@ GOTO CONFUSION
 CONFUSION > yourFiles\memory.txt
 title The lightbulbs on the top of the car have palpable heat in the cold.
 echo.
+COLOR 04
 echo This is how it will work.
 echo You will never see your prompt again.
 echo Choose your questions wisely.
@@ -239,6 +246,7 @@ echo This is how it will work.
 echo You can leave whenever you wish.
 echo Choose your timing wisely.
 pause >nul
+COLOR 0f
 echo.
 echo.
 echo 1. Who are you?
@@ -279,6 +287,7 @@ GOTO ETC
 ETC > yourFiles\memory.txt
 title The dog is in front of you, but you feel it everywhere
 echo.
+COLOR 04
 echo Husk.
 echo You will never see your prompt again.
 echo The time for answers draws to a close.
@@ -295,6 +304,7 @@ echo Choose your burden wisely.
 echo Cross me and I'll find what the husk is stringed to.
 pause >nul
 echo.
+COLOR 0f
 echo.
 echo 1.Pandora
 echo 2.The Wayward Sister
@@ -347,6 +357,7 @@ IF /I "%AREYOUSURE%" EQU "3" GOTO KILLATTEMPT
 IF /I "%AREYOUSURE%" NEQ "3" GOTO POWERFULMOVE
 
 :STAY
+STAY > yourFiles\memory.txt
 echo.
 echo The dog sees your hesitation
 echo It stands up and trots over
@@ -529,6 +540,7 @@ echo She clears a path through them and emerges from the silver
 pause >nul
 GOTO LASTWORD
 :LASTWORD
+LASTWORD > yourFiles\memory.txt
 echo. 
 echo Her head could house a giant
 echo Her teeth are ivory bends and her gums rot with silver
@@ -598,12 +610,14 @@ GOTO DEATH
 pause >nul
 GOTO RIDDLETIME
 :RIDDLETIME
+RIDDLETIME > yourFiles\memory.txt
 echo. 
 echo She rests her head against the silver sea before you
 echo Signing, she sings her first riddle towards you
 echo The melody pierces your mind
 pause >nul
 :RIDDLE1
+RIDDLE1 > yourFiles\memory.txt
 echo. 
 echo In the heat of night
 echo Thousands of voices sing
@@ -627,6 +641,7 @@ pause >nul
 echo.
 
 :RIDDLE2
+RIDDLE2 > yourFiles\memory.txt
 echo The heavens cry
 echo And up I rise
 echo To fight the onslaught of the skies
@@ -649,6 +664,7 @@ pause >nul
 echo.
 
 :RIDDLE3
+RIDDLE3 > yourFiles\memory.txt
 echo Call me up when you feel lucky
 echo A game, a strategy, a gamble
 echo Take on me to fall or rise
@@ -678,6 +694,7 @@ pause >nul
 echo.
 
 :RIDDLE4
+RIDDLE4 > yourFiles\memory.txt
 echo Something there but not quite solid
 echo Light on light or dust or screen
 echo Something built to be decieving, or another's gleam
@@ -700,6 +717,7 @@ pause >nul
 echo.
 
 :RIDDLE5
+RIDDLE5 > yourFiles\memory.txt
 echo Fire burns in its belly, and spouts on four scales
 echo It breathes through coiled metal, inhale and exhale
 echo Feed it well, for it will does not intend to consume
@@ -714,6 +732,7 @@ IF /I "%AREYOUSURE%" EQU "ovens" GOTO ANSWER5
 IF /I "%AREYOUSURE%" NEQ "oven" GOTO ANSWERME5
 
 :ANSWER5
+ANSWER5 > yourFiles\memory.txt
 echo.
 echo The papers sink into Pandora's skin.
 echo Pandora is content with your knowledge.
@@ -730,6 +749,7 @@ echo The key a gift for the future
 echo But the bodies for the dog now
 pause >nul
 :PANDORAGIFT
+PANDORAGIFT > yourFiles\memory.txt
 title The fluttering of paper comes from the stomach of the beast
 echo.
 echo She raises her mighty head to level with your own
@@ -791,6 +811,7 @@ IF /I "%AREYOUSURE%" EQU "3" GOTO HE
 IF /I "%AREYOUSURE%" NEQ "4" GOTO ANSANS
 
 :HE
+HE > yourFiles\memory.txt
 echo. 
 echo Beg him for my meal
 echo Do it now.
@@ -861,6 +882,7 @@ echo The image of the eyes burned into your retinas.
 pause > nul
 GOTO ANSEL
 :ANSEL
+ANSEL > yourFiles\memory.txt
 title Your heart begins to jackhammer in your chest
 echo.
 echo A man leans against the couch, lounging as if dead
@@ -901,6 +923,7 @@ IF /I "%AREYOUSURE%" EQU "3" GOTO KILLANSEL
 IF /I "%AREYOUSURE%" NEQ "4" GOTO HEREWEGOAGAIN
 
 :DUELRULE
+DUELRULE > yourFiles\memory.txt
 msg * We are like you, a husk.
 msg * /W We may share room with them, but they are nothing like us.
 msg * We cannot share this body any longer.
@@ -926,6 +949,7 @@ msg * /W Duality should have no place here.
 echo You feel something take shape in your palm.
 
 :HANDGUESS
+HANDGUESS > yourFiles\memory.txt
 SET /P AREYOUSURE=What will you hold in your hand?
 SET CURRNAME=HANDGUESS
 for /f "delims=" %%x in (yourFiles\hand.txt) do set Hand=%%x
@@ -1019,6 +1043,7 @@ msg *  That ought to shut them up.
 pause > nul
 
 :ANSELGIFT
+ANSELGIFT > yourFiles\memory.txt
 title You hear the clicking of bugs from someplace, and the singing of a hundred men
 echo.
 echo Ansel looks still
@@ -1035,6 +1060,15 @@ echo Teeming on his fingertips are worms
 echo Sprites, beetles, aglow with white light
 echo The skitter and latch themselves onto your feet
 pause >nul
+msg /W * Go feed your mangy mutt
+msg /W * Tell him to stop sending you here
+msg /W * I don't want to keep retrieving his meals
+msg /W * We want to return, not to do his dirty works
+echo Ansel pushes the air, and your body lurches backwards
+echo You stumble into the traincar, speeding past
+echo 
+rem transition2
+
 
 :GREYWALL
 GREYWALL > yourFiles\memory.txt
